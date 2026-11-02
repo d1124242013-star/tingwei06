@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGs 性別平權小達人 - 學習證書</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Serif TC & Noto Sans TC for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .serif-text {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        /* Certificate Double Border & Corner Ornaments */
+        .cert-outer-border {
+            border: 12px double #d97706; /* Rich Amber Gold */
+            position: relative;
+            background: #ffffff;
+        }
+
+        .cert-inner-border {
+            border: 2px solid #b45309;
+            margin: 8px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        /* Corner Flourishes */
+        .corner-ornament {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-color: #d97706;
+            pointer-events: none;
+        }
+        .corner-tl { top: 4px; left: 4px; border-top: 4px solid; border-left: 4px solid; }
+        .corner-tr { top: 4px; right: 4px; border-top: 4px solid; border-right: 4px solid; }
+        .corner-bl { bottom: 4px; left: 4px; border-bottom: 4px solid; border-left: 4px solid; }
+        .corner-br { bottom: 4px; right: 4px; border-bottom: 4px solid; border-right: 4px solid; }
+
+        /* Gold Seal Stamp */
+        .gold-seal {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%);
+            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+        }
+
+        /* Print Specific Styling */
+        @media print {
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-container {
+                box-shadow: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+            .cert-outer-border {
+                border-width: 8px !important;
+                page-break-inside: avoid;
+            }
+            .cert-inner-border {
+                padding: 2rem !important;
+                margin: 4px !important;
+            }
+            @page {
+                size: A4 landscape;
+                margin: 1cm;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 flex flex-col items-center justify-center">
+
+    <!-- Top Control Bar (Hidden on Print) -->
+    <div class="no-print w-full max-w-4xl bg-white p-6 rounded-2xl shadow-lg border border-amber-200 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex-1 w-full">
+            <label for="nameInput" class="block text-sm font-bold text-gray-700 mb-2">
+                <i class="fa-solid fa-pen-to-square text-amber-600 mr-1"></i> 請輸入獲獎者姓名：
+            </label>
+            <input type="text" id="nameInput" value="李庭緯" 
+                class="w-full px-4 py-2 text-lg border-2 border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all font-semibold text-gray-800"
+                placeholder="輸入姓名...">
+        </div>
+        <div class="flex gap-3 w-full md:w-auto">
+            <button onclick="window.print()" 
+                class="flex-1 md:flex-none px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-print"></i> 下載 / 列印證書
+            </button>
+        </div>
+    </div>
+
+    <!-- Certificate Container (Printable Area) -->
+    <div class="print-container w-full max-w-4xl bg-white rounded-xl shadow-2xl p-4 transition-all">
+        <!-- Outer Frame -->
+        <div class="cert-outer-border rounded-lg">
+            <!-- Inner Frame -->
+            <div class="cert-inner-border rounded">
+                <!-- Corner Ornaments -->
+                <div class="corner-ornament corner-tl"></div>
+                <div class="corner-ornament corner-tr"></div>
+                <div class="corner-ornament corner-bl"></div>
+                <div class="corner-ornament corner-br"></div>
+
+                <!-- Certificate Content -->
+                <div class="text-center">
+                    
+                    <!-- Top Badge Icon / Header -->
+                    <div class="flex justify-center items-center gap-2 mb-2">
+                        <span class="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-bold tracking-widest uppercase border border-red-200">
+                            SDG 5 性別平權
+                        </span>
+                        <span class="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold tracking-widest uppercase border border-amber-200">
+                            永續發展目標
+                        </span>
+                    </div>
+
+                    <h1 class="serif-text text-3xl sm:text-4xl md:text-5xl font-black text-amber-900 tracking-wider mb-2">
+                        結 業 證 書
+                    </h1>
+                    <p class="text-xs sm:text-sm text-amber-700 tracking-widest font-semibold uppercase mb-8">
+                        Certificate of Achievement
+                    </p>
+
+                    <!-- Recipient Name -->
+                    <div class="my-6">
+                        <p class="text-gray-600 text-sm mb-2">茲證明學員</p>
+                        <div class="inline-block border-b-2 border-amber-500 px-8 py-1">
+                            <span id="certName" class="serif-text text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-wide">
+                                李庭緯
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mt-3">完成 SDGs 性別平等主題課程與挑戰，表現優異，特頒此證，榮獲</p>
+                    </div>
+
+                    <!-- Achievement Title Box -->
+                    <div class="my-6 inline-block bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 border-2 border-amber-400 px-6 py-4 rounded-xl shadow-sm">
+                        <span class="serif-text text-2xl sm:text-3xl font-black text-amber-800 tracking-wider">
+                            「SDGs 性別平權小達人」
+                        </span>
+                    </div>
+
+                    <!-- AI Feedback Section -->
+                    <div class="max-w-2xl mx-auto my-6 p-4 bg-amber-50/60 rounded-lg border border-amber-200/80 text-left">
+                        <div class="flex items-center gap-2 text-amber-800 font-bold text-sm mb-1">
+                            <i class="fa-solid fa-robot text-amber-600"></i> AI 導師綜合評語與回饋：
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+                            「恭喜你順利通過 SDGs 性別平權課程！你在學習過程中展現了優秀的包容思維與平權意識，不僅能深度理解消除性別偏見的重要性，更能運用實際行動推廣尊重的價值。期待你持續發揮影響力，攜手打造更加多元、平等與包容的社會！」
+                        </p>
+                    </div>
+
+                    <!-- Certificate Footer / Seal & Date -->
+                    <div class="mt-8 pt-6 border-t border-amber-100 flex flex-col sm:flex-row items-center justify-between gap-6 px-4">
+                        <!-- Issue Date -->
+                        <div class="text-left text-xs sm:text-sm text-gray-600 space-y-1 order-2 sm:order-1">
+                            <p><span class="font-semibold text-gray-800">發證日期：</span><span id="certDate">2026 年 11 月 02 日</span></p>
+                            <p><span class="font-semibold text-gray-800">證書編號：</span>SDG5-2026-99824</p>
+                        </div>
+
+                        <!-- Gold Seal Badge -->
+                        <div class="order-1 sm:order-2 flex flex-col items-center">
+                            <div class="gold-seal w-16 h-16 rounded-full flex items-center justify-center text-white text-center p-1 border-2 border-amber-200">
+                                <div class="border border-white/50 w-full h-full rounded-full flex flex-col items-center justify-center">
+                                    <i class="fa-solid fa-award text-xl text-amber-100"></i>
+                                    <span class="text-[8px] font-bold uppercase tracking-tighter">Verified</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Organization Signature / Stamp -->
+                        <div class="text-right text-xs sm:text-sm text-gray-600 space-y-1 order-3">
+                            <p class="font-bold text-amber-900 text-base serif-text">SDGs 永續學習委員會</p>
+                            <p class="text-gray-500 text-xs">Gender Equality Education Org</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Dynamic Input & Date -->
+    <script>
+        const nameInput = document.getElementById('nameInput');
+        const certName = document.getElementById('certName');
+        const certDate = document.getElementById('certDate');
+
+        // Live update name in certificate
+        nameInput.addEventListener('input', (e) => {
+            const val = e.target.value.trim();
+            certName.textContent = val || '李庭緯';
+        });
+
+        // Set Today's Date dynamically (Formatted in Traditional Chinese Date)
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        certDate.textContent = `${year} 年 ${month} 月 ${day} 日`;
+    </script>
+</body>
+</html>
